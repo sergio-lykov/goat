@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">GOAT Domino</title>
+  <desc id="desc">Минималистичный знак для Telegram Mini App: козлиные рога, угловатая голова и домино.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="64" y1="48" x2="448" y2="464" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#15181D"/>
+      <stop offset="1" stop-color="#090A0C"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="168" y1="120" x2="344" y2="386" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F6F2EA"/>
+      <stop offset="1" stop-color="#D8D2C6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Avatar-safe background -->
+  <rect width="512" height="512" rx="128" fill="url(#bg)"/>
+
+  <!-- Horns: deliberately graphic, not illustrative -->
+  <path d="M214 168C171 150 140 116 134 72c43 7 78 31 98 66"
+        fill="none" stroke="url(#accent)" stroke-width="30"
+        stroke-linecap="round"/>
+  <path d="M298 168c43-18 74-52 80-96-43 7-78 31-98 66"
+        fill="none" stroke="url(#accent)" stroke-width="30"
+        stroke-linecap="round"/>
+
+  <!-- Head silhouette -->
+  <path d="M179 169c20-24 46-36 77-36s57 12 77 36l-18 112c-4 29-22 56-59 78-37-22-55-49-59-78Z"
+        fill="url(#accent)"/>
+
+  <!-- Negative-space cheek cuts -->
+  <path d="M179 225 229 198l-18 65-27 10Z" fill="#0D0F12"/>
+  <path d="m333 225-50-27 18 65 27 10Z" fill="#0D0F12"/>
+
+  <!-- Domino as the muzzle / game symbol -->
+  <rect x="205" y="263" width="102" height="74" rx="22" fill="#0D0F12"/>
+  <path d="M256 271v58" stroke="#F6F2EA" stroke-width="6" stroke-linecap="round" opacity=".9"/>
+  <circle cx="229" cy="300" r="7" fill="#F6F2EA"/>
+  <circle cx="283" cy="286" r="7" fill="#F6F2EA"/>
+  <circle cx="283" cy="314" r="7" fill="#F6F2EA"/>
+
+  <!-- Beard / lower point -->
+  <path d="m221 347 35 66 35-66-35 20Z" fill="#D8D2C6"/>
+  
+</svg>

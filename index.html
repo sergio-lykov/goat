@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#11131a">
+    <title>Козёл · счёт для домино</title>
+    <link rel="icon" href="./assets/goat.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://telegram.org/js/telegram-web-app.js?63"></script>
+    <script type="module" src="./main.js"></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="brand">
+        <div class="brand__mark" aria-hidden="true">
+          <img src="./assets/goat.svg" alt="">
+        </div>
+        <div>
+          <p class="eyebrow">DOMINO SCORE</p>
+          <h1>Козёл</h1>
+          <p class="brand__subtitle">Счёт без бумажек и споров у стола</p>
+        </div>
+      </header>
+
+      <section class="panel" data-screen="setup">
+        <div class="panel__heading">
+          <div>
+            <p class="step">Новая партия</p>
+            <h2>Кто сегодня козёл?</h2>
+          </div>
+          <span class="domino-chip" aria-hidden="true">••│•</span>
+        </div>
+
+        <form id="setup-form">
+          <fieldset class="fieldset">
+            <legend>Количество игроков</legend>
+            <div class="segmented" aria-label="Количество игроков">
+              <button class="segmented__button segmented__button--active" type="button" data-player-count="2" aria-pressed="true">2</button>
+              <button class="segmented__button" type="button" data-player-count="3" aria-pressed="false">3</button>
+              <button class="segmented__button" type="button" data-player-count="4" aria-pressed="false">4</button>
+            </div>
+          </fieldset>
+
+          <div class="fields" id="player-names"></div>
+
+          <div class="rule-card">
+            <span class="rule-card__icon" aria-hidden="true">13</span>
+            <p>До открытия счёт идёт «на карандаше». Ноль сбрасывает его, а раунд от 13 очков открывает запись.</p>
+          </div>
+
+          <button class="button button--primary button--wide" type="submit">Начать партию</button>
+        </form>
+      </section>
+
+      <section class="panel" data-screen="game" hidden>
+        <div class="panel__heading">
+          <div>
+            <p class="step">Текущая партия</p>
+            <h2>Запиши раунд</h2>
+          </div>
+          <span class="score-limit">до 101</span>
+        </div>
+
+        <form id="game-form">
+          <div class="players-grid" id="game-players"></div>
+          <button class="button button--primary button--wide" type="submit">Записать раунд</button>
+        </form>
+
+        <div class="secondary-actions">
+          <button class="button button--ghost" id="reset-scores" type="button">Сбросить очки</button>
+          <button class="button button--danger" id="new-game" type="button">Новая партия</button>
+        </div>
+        <p class="game-hint" id="game-over-hint"></p>
+      </section>
+
+      <section class="panel finish" data-screen="finish" hidden>
+        <div class="finish__icon" aria-hidden="true">
+          <img src="./assets/goat.svg" alt="">
+        </div>
+        <p class="step">Партия окончена</p>
+        <h2>Козёл определён</h2>
+        <p class="finish__subtitle">До следующего реванша этот почётный статус закреплён официально.</p>
+        <ul class="finish-list" id="finish-list"></ul>
+        <button class="button button--primary button--wide" id="play-again" type="button">Сыграть ещё</button>
+      </section>
+    </main>
+
+  </body>
+</html>
